@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Meeko online</title>
+    <meta charset="utf-8" />
+    <script src="./Meeko/people.js"></script>
+    <style>
+        li {
+            float:left;
+        }
+        .button_menu li button{
+            float:left;
+        }
+    </style>
+</head>
+<body>
+    <p>Make single people:</p>
+    <ul class="button_menu">
+        <li>
+            <button type="button" onclick="makeSingleHunman(0)">standing people</button>
+        </li>
+    </ul>
+    <ul>
+        <li>
+            <button type="button" onclick="makeSingleHunman(1)">sitting people</button>
+        </li>
+    </ul>
+    <br />
+    <p>Make multiply people:</p>
+    <ul class="button_menu">
+        <li>
+            <button type="button" onclick="makeMultiplyHunman(0)">add a standing people</button>
+        </li>
+    </ul>
+    <ul>
+        <li>
+            <button type="button" onclick="makeMultiplyHunman(1)">add a sitting people</button>
+        </li>
+    </ul>
+    <ul>
+        <li>
+            <button type="button" onclick="cleanCanvas()">clean</button>
+        </li>
+    </ul>
+        <br />
+<!--画布-->
+    <canvas id="canvas" width="1000" height="1000" style="background-color:#fff9ef">
+        Your version is not suppoted
+    </canvas>
+
+    <script>
+        function makeSingleHunman(flag) {
+            cleanCanvas();
+            var peo = new People(flag);
+            peo.drawPoint();
+            console.log("make a hunman");
+        }
+
+        function makeMultiplyHunman(flag) {
+            var peo = new People(flag);
+            peo.drawPoint();
+            console.log("make a hunman");
+        }
+
+    </script>
+
+
+</body>
+</html>
