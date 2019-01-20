@@ -107,7 +107,13 @@ function Shoulder(preJoint, ifLeft) {
     this.preJoint = preJoint;
     this.len = 60;
     this.r = 10;
-    this.rad_xy = ifLeft ? fromAngleMakeRad(-30, 30) : fromAngleMakeRad(150, 210);
+    let x = makeRandom(1, 10);
+    if (x > 2) {
+        this.rad_xy = ifLeft ? fromAngleMakeRad(0, 30) : fromAngleMakeRad(150, 180);
+    }
+    else {
+        this.rad_xy = ifLeft ? fromAngleMakeRad(-30, 0) : fromAngleMakeRad(180, 210);
+    }
     this.ratio = makeRatio(1);
     this.color = '#905070';
     Joint.call(this, preJoint, this.len, this.r, this.rad_xy, this.color, this.ratio);
@@ -119,7 +125,13 @@ function Elbow(preJoint) {
     this.preJoint = preJoint;
     this.len = 150;
     this.r = 10;
-    this.rad_xy = fromAngleMakeRad(0, 360);
+    let x = makeRandom(1, 10);
+    if (x > 2) {
+    this.rad_xy = fromAngleMakeRad(0, 180);
+    }
+    else {
+        this.rad_xy = fromAngleMakeRad(180, 360);
+    }
     this.ratio = makeRatio(0);
     this.color = '#9055A0';
     Joint.call(this, preJoint, this.len, this.r, this.rad_xy, this.color, this.ratio);
